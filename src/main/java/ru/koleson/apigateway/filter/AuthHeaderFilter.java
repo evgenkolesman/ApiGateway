@@ -74,21 +74,21 @@ public class AuthHeaderFilter extends AbstractGatewayFilterFactory<AuthHeaderFil
 // Reading Custom Claims
 //        System.out.println("Role: " + claims.get("Role"));
 //        System.out.println("Department: " + claims.get("Department"));
-        try {
-            sub = Jwts.parser()
-                    .setSigningKey(environment.getProperty("token.secret"))
-                    .parseClaimsJws(jwt)
-                    .getBody()
-                    .getSubject();
-        } catch (Exception e) {
-            e.printStackTrace();
-            logger.info(sub.getBytes(StandardCharsets.UTF_8).toString());
-            returnVal = false;
-        }
-
-        if(sub == null || sub.isEmpty()) {
-            returnVal = false;
-        }
+//        try {
+//            sub = Jwts.parser()
+//                    .setSigningKey(environment.getProperty("token.secret"))
+//                    .parseClaimsJws(jwt)
+//                    .getBody()
+//                    .getSubject();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            logger.info(sub.getBytes(StandardCharsets.UTF_8).toString());
+//            returnVal = false;
+//        }
+//
+//        if(sub == null || sub.isEmpty()) {
+//            returnVal = false;
+//        }
 
         return returnVal;
     }

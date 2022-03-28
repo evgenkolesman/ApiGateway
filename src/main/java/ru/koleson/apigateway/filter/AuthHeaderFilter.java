@@ -63,6 +63,7 @@ public class AuthHeaderFilter extends AbstractGatewayFilterFactory<AuthHeaderFil
     private boolean isJwtValid (String jwt) {
         boolean returnVal = true;
         String sub = null;
+        //TODO need to fix this validation problems
 // I need to fix error here setSigningKey throwing NoClassDefFoundError
 //        Claims claims = Jwts.parser()
 //                .setSigningKey(environment.getProperty("token.secret"))
